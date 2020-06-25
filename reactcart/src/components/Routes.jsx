@@ -12,7 +12,7 @@ const  Routes =(props)=>{
         <div style={{display:"flex"}}>
             <Route path="/" exact render ={()=><Home {...props} app={app}/>} />
             <Route path="/cart" render ={()=><Cart {...props} app={app}/>} />
-            <Route path="/login" render ={()=><Login/>} />
+            <Route path="/login" render ={()=><Login {...props} app={app}/>} />
         </div>
     )
 }
