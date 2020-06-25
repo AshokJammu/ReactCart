@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 class  Login extends React.Component{
 
@@ -13,6 +14,7 @@ class  Login extends React.Component{
 
     handleSubmit = ()=>{
         const {app} = this.props
+        console.log(app)
         const {username,pwd} = this.state
         let user = {username,pwd}
         console.log(user)
@@ -21,6 +23,11 @@ class  Login extends React.Component{
 
     render(){
         const {username,pwd} = this.state
+        const { app } = this.props
+
+        if(app.isAuthenticate()){
+            return <Redirect to = "/"/>
+        }
         return(
             <div>
                 UserName:

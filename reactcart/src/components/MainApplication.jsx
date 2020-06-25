@@ -26,29 +26,34 @@ class MainApplication extends Component {
         }
     }
     // ADD Authentication
-    validationUser =({name,password})=>{
+    validationUser =({username,pwd})=>{
+        // console.log(name,password)
         let flag = false
 
         this.state.users.forEach(user =>{
-            if(user.name === name && user.password === password){
+            if(user.name === username && user.password === pwd){
                 flag = true
             }
         })
-        this.setState({
+        if(flag){
+           alert("user is valid")
+           this.setState({
             isAuth:true
         })
-        if(flag){
-           alert("userisvalid")
         }
         else{
              alert("need valid username and password ")
         }
 
-        return flag
+        // return flag
     }
 
     // product which is selected for add to cart 
     addToCart = (product) => {
+
+        if(!this.isAuthenticate()){
+            alert('please login')
+        }
         let cart = [...this.state.cartArr]  // we are taking our cartAarray and initialising into cart
         let id = product.id
 
