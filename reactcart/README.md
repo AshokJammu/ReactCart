@@ -66,3 +66,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+Functionality:
+
+1. Creating Route , Navbar
+
+2. Create Product Page along with Add to Cart
+
+3. Create Authentication Page
+
+4. Create Cart page to show the item list of user
